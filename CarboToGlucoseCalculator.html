@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Karbohidrat ke Glukosa</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+      
+      .calculator {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      input[type="number"] {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        border: none;
+        background-color: #fff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0.25rem;
+        margin-bottom: 1rem;
+        width: 80%;
+        max-width: 300px;
+      }
+      
+      button {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        border: none;
+        background-color: #4CAF50;
+        color: #fff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0.25rem;
+        width: 80%;
+        max-width: 300px;
+      }
+      
+      button:hover {
+        cursor: pointer;
+        background-color: #3e8e41;
+      }
+      
+      p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Karbohidrat Kalkulator</h1>
+    <div class="calculator">
+      <h2>Kalkulator Karbohidrat ke Glukosa</h2>
+      <form>
+        <label for="carbs">Masukan Karbohidrat (dalam gram)</label>
+        <input type="number" id="carbs" required>
+        <button type="button" onclick="calculate()">Konversi</button>
+        <p id="result"></p>
+      </form>
+    </div>
+    <div class="calculator">
+      <h2>Kalkulator Glukosa dalam (Se)porsi Nasi</h2>
+      <form>
+        <label for="rice-grams">Masukan jumlah bobot nasi (dalam gram)</label>
+        <input type="number" id="rice-grams" required>
+        <button type="button" onclick="calculateRice()">Kalkulasi</button>
+        <p id="rice-result"></p>
+      </form>
+    </div>
+    <script>
+      function calculate() {
+        const carbs = document.getElementById("carbs").value;
+        const glucose = carbs * 0.9;
+        document.getElementById("result").innerHTML = `Glukosa: ${glucose} grams`;
+      }
+      
+      function calculateRice() {
+        const riceGrams = document.getElementById("rice-grams").value;
+        const glucose = riceGrams * 0.28;
+        document.getElementById("rice-result").innerHTML = `Glukosa: ${glucose} grams`;
+      }
+    </script>
+  </body>
+</html>
